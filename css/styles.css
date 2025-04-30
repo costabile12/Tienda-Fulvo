@@ -843,35 +843,40 @@ body {
         main {
             .cards {
                 .indexTitle {
-                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem)
+                    font-size: clamp(1rem, -0.857rem + 9.29vw, 2.625rem);
+                    background-color: #222;
+                    border-radius: 0 40px 0 40px;
+                    padding: 5px;
+                    text-shadow: none;
+                    
                 }
 
                 .container_productos {
                     padding: 0;
 
                     .productoCard {
-                        width: 11rem;
+                        width: 10rem;
 
                         img {
-                            height: 15em;
+                            height: 13em;
                         }
                         .cuerpo-tarjeta {
                             .titulo-card {
-                                font-size: 14px;
+                                font-size: 13px;
                             }
                             .card-descripcion{
-                                font-size: 10px;
+                                font-size: 9px;
                             }
                             .price{
-                                font-size: 14px;
+                                font-size: 13px;
                             }
                             .btn-descripcion{
                                 
-                                font-size: 10px;
+                                font-size: 8px;
                             }
                             .btn-comprar{
-                                font-size: 10px;
-                                width: 95px;
+                                font-size: 8px;
+                                width: 81px;
                             }
     
                         }
@@ -952,7 +957,11 @@ body {
         main {
             .cards {
                 .indexTitle {
-                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem)
+                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem);
+                    background-color: #222;
+                    border-radius: 0 40px 0 40px;
+                    padding: 5px;
+                    text-shadow: none;
                 }
 
                 .container_productos {
@@ -966,13 +975,21 @@ body {
                         }
                         .cuerpo-tarjeta {
                             .titulo-card {
-                                font-size: 1.3em;
+                                font-size: 20px;
                             }
                             .card-descripcion{
-                                font-size: 0.8em;
+                                font-size: 16px;
                             }
                             .price{
-                                font-size: 1.3em;
+                                font-size: 20px;
+                            }
+                            .btn-descripcion{
+                                font-size: 15px;
+                            }
+                            .btn-comprar{
+
+                                font-size: 15px;
+                                width: 133px;
                             }
     
                         }
