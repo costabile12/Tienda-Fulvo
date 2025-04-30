@@ -1,0 +1,1391 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-image: url("../assets/img/fondo_pagina.jpg");
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+
+
+    header {
+
+        background-image: linear-gradient(to bottom, #8bc34a, #80ca40, #72d235, #5ed929, #40e11d);
+        overflow: hidden;
+        width: 100%;
+        
+
+
+        .informacionCabecera{
+            background-color: #222;
+            height: 32px;
+            .list_info_cabecera{
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 7em;
+                gap: 4em;
+                padding: 6px;
+                li {
+                    
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 3px;
+                        text-decoration: none;
+                        color: #eee;
+                        font-size: 0.8em;
+                        font-weight: bold;
+
+                        svg {
+                            height: 1.4em;
+                            width: 2em;
+                        }
+                    }
+
+                    a:hover {
+
+                        filter: drop-shadow(0px 0px 2px #40e11d);
+                    }
+                }
+            }
+        }
+
+        .navegacion_principal {
+            background-image: linear-gradient(to bottom, #8bc34a, #80ca40, #72d235, #5ed929, #40e11d);
+            
+            .logo {
+                width: 8%;
+            }
+
+            .list_enlaces {
+                margin-left: 1em;
+                background-color: #222;
+                border-radius: 10px;
+                li{
+                    padding: 0 10px;
+                    border-right: 1px solid #ddd;
+
+                    a{
+                        font-family: "Itim";
+                        font-size: 18px;
+                        letter-spacing: 2px;
+                        font-weight: bold;
+                        color: #ddd;
+                    }
+
+                    a:hover {
+                        filter: drop-shadow(0px 0px 2px #40e11d);
+                    }
+                }
+
+                li:last-child {
+                    border-right: none;
+                }
+                 
+            }
+            .buscador:focus {
+                outline: none;
+                box-shadow: 0 0 12px #000;
+
+            }
+
+            .btn-lupa {
+                border: 1px solid #ddd;
+                background-color: #222;
+
+            
+            }
+            .btn-lupa:active{
+                background-color: #222;
+                border-color: #ddd;
+                transform: translateX(-1px) translateY(2px);
+                box-shadow: 0 0 12px #000;
+            }
+            .btn-carrito-perfil{
+                display: flex;
+                gap: 6px;
+                margin-left: 6px;
+
+                .btn-carrito, .btn-perfil{
+                    border: 1px solid #ddd;
+                    background-color: #222;
+                }
+
+                .btn-carrito:active{
+                    background-color: #222;
+                    border-color: #ddd;
+                    transform: translateX(-1px) translateY(2px);
+                    box-shadow: 0 0 12px #000;
+                }
+                .btn-perfil:active{
+                    background-color: #222;
+                    border-color: #ddd;
+                    transform: translateX(-1px) translateY(2px);
+                    box-shadow: 0 0 12px #000;
+                }
+            }
+        }
+
+
+    }
+
+    
+
+    main {
+        
+
+        .presentacion {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            img {
+                width: 100%;
+                margin:0;    
+            }
+        }
+        
+        .cards, .retro, .restoMundo, .europeos, .argentinos {
+            
+            .indexTitle {
+                color: white;
+                text-shadow:  4px 4px 2px black;
+                margin: 1em 3em;
+                font-size: 72px;
+                font-family: "Itim";
+                text-align: center;
+            }
+            h1 {
+                color: white;
+                text-shadow:  3px 3px 2px black;
+                margin: 1em 3em;
+                font-size: 42px;
+                font-family: "Itim";
+                
+            }
+
+            .container_productos{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 20px 10em;
+                align-items: stretch;
+
+                
+
+                .productoCard {
+                    background-color: #222;
+                    width: 20em;
+                    height: auto;
+                    text-align: center;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    box-shadow: 10px 10px 12px #000;
+                    margin: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    justify-content: space-between;
+                    border: none;
+
+                    img {
+                        width: 100%;
+                        height: 25em;
+                        object-fit: cover;
+                    }
+                    .cuerpo-tarjeta {
+                        .titulo-card{
+                            color: #ddd;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 28px;
+                        }
+
+                        .card-descripcion{
+                            color: #ddd;
+
+                        }
+                        .price {
+                            color: #ddd;
+                            font-size: 22px;
+                            font-weight: bold;
+                        }
+
+                        .btn-descripcion{
+                            
+                            border-radius: 7px;
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            color: #000;
+                            border: 1px solid #ddd;
+                            background-color: #80ca40;
+                            font-family:"Itim", cursive;
+                            cursor: pointer;
+                        }
+
+                        .btn-descripcion:hover {
+                            transition: 150ms;
+                            background-color: #ddd;
+                            box-shadow: 0 0 12px #5ed929;
+                            border-color: #80ca40;
+                        }
+                        .btn-descripcion:active {
+                            transform: translateY(2px) translateX(-1px);
+
+                        }
+                        .btn-comprar{
+                            width: 140px;
+                            border-radius: 7px;
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            color: #000;
+                            border: 1px solid #ddd;
+                            background-color: #80ca40;
+                            font-family:"Itim", cursive;
+                            cursor: pointer;
+                        }
+                        .btn-comprar:hover{
+                            transition: 150ms;
+                            background-color: #ddd;
+                            box-shadow: 0 0 12px #5ed929;
+                            border-color: #80ca40;
+                        }
+                        .btn-comprar:active{
+                            transform: translateY(2px) translateX(-1px);
+                        }
+
+
+                    }
+
+
+                }
+            }
+
+        }
+
+        .contacto{
+            padding: 20px 40px;
+            margin-bottom: 2em;
+            h1 {
+                color: white;
+                text-shadow: 0 0 12px black;
+                margin: 1em 3em;
+                font-size: 32px;
+            }
+            .containerContacto {
+                form {
+                    padding: 40px;
+                    margin: auto;
+                    background-color: #222; 
+                    width: 40%;
+                    height: max-content;
+                    color: #eee;
+                    border: 8px groove #eee;
+                    border-radius: 8px;
+                    
+                    fieldset {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 20px;
+                        
+                        legend {
+                            font-size: 18px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            text-shadow: 0 0 12px #000;
+                        }
+    
+                        p {
+                            display: flex;
+                            flex-direction: column;
+                            width: 90%;
+                            margin:5px 0 5px 0 ;
+                            label {
+                                text-transform: uppercase;
+                                margin: 10px 10px 10px 0;
+                            }
+                            input {
+                                padding: 6px;
+                                border-radius: 8px;
+                            }
+                            textarea{
+                                padding: 8px;
+                                border-radius: 8px;
+                            }
+    
+                            input:focus{
+                                outline:none;
+                                box-shadow:0 0 10px #40e11d;
+                            }
+                            textarea:focus{
+                                outline: none;
+                                box-shadow: 0 0 10px #40e11d;
+                            }
+                        }
+                        
+                        }
+                        .container_botones {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            gap: 10px;
+    
+                            .boton {
+                                width: 32%;
+                                border-radius: 8px;
+                                padding: 6px;
+                                background-color: #eee;
+                            }
+                            .boton:hover{
+                                box-shadow:0 0 5px #40e11d;
+                            }
+                            
+    
+    
+                    }
+    
+                }
+                .otrasFormasContacto{
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: baseline;
+                    margin: 2em 1em 0 1em;
+
+                    .atencionPublico, .horarios  {
+                        
+                        text-align: center;
+                        padding: 10px;
+                        margin: auto;
+                        background-color: #222;
+                        width: 500px;
+                        height: 120px;
+                        color: #eee;
+                        border: 2px solid #eee;
+                        border-radius: 8px;
+
+                        h2 {
+                            font-size: 22px;
+                        }
+                        p {
+                            font-size: 18px;
+                            margin: 10px 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 3px;
+                        }
+
+                    }
+                }
+            }
+
+
+
+        }
+
+        .ubicacion {
+            padding: 20px 40px;
+            margin-bottom: 2em;
+
+            h1 {
+                color: white;
+                text-shadow: 0 0 12px black;
+                margin: 1em 3em;
+                font-size: 32px;
+            }
+
+            .containerMaps {
+                display: flex;
+                justify-content: center;
+            }
+          
+            
+
+            
+        }
+
+        .visualizarProducto {
+            display: grid;
+            grid-template-areas: "imagen personalizar"
+                                "relacionados relacionados";
+            grid-template-columns: 50% auto;
+
+            .containerImg{
+                grid-area: imagen;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .containerPersonalizacion{
+                grid-area: personalizar;
+                background-color: #222;
+                height: 100%;
+                padding:2em;
+
+                h1 {
+                    font-family: "Itim";
+                    color: #ddd;
+                    font-style: italic;
+                    
+                }
+                .price{
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 24px;
+                    letter-spacing: 3px;
+                    font-weight: 800;
+                    color: #ddd;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                }
+
+                .containerSelectorAndCantidad {
+                    padding: 1.5em;
+                    display: flex;
+                    align-items: baseline;
+                    gap: 2em;
+
+                    label {
+                        color: #ddd;
+                        font-size: 18px;
+                    }
+
+                    .selectorTalle {
+                        select {
+                            border-radius: 8px;
+                            padding: 5px;
+                        }
+                        select:focus{
+                            outline:none;
+                            box-shadow:0 0 10px #40e11d;
+                        }
+                    }
+
+                    .quantity-selector {
+                        input {
+                            padding: 6px;
+                            border-radius: 8px;
+                        }
+
+                        button {
+                            text-align: center;
+                            width: 35px;
+                            height: 40px;
+                            color: #000;
+                            font-size: 22px;
+                            background-color: transparent;
+                            padding: 5px;
+                            border: none;
+                            border-radius: 8px;
+                            background-color: #eee;
+                            cursor: pointer;
+                        }
+                        button:hover {
+                            transition: 150ms;
+                            background-color: #ddd;
+                            box-shadow: 0 0 12px #5ed929;
+                            border-color: #80ca40;
+                        }
+                        button:active {
+                            transform: translateY(2px) translateX(-1px);
+
+                        }
+
+                        input:focus{
+                            outline:none;
+                            box-shadow:0 0 10px #40e11d;
+                        }
+                    }  
+
+                }
+
+                .btn-agregar {
+                    margin-right: 1em;
+                    text-align: right;
+                    button {
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-style: italic;
+                        font-weight: bold;
+                        color: #ddd;
+                        text-shadow: 1px 1px 2px #000;
+                        width: 35%;
+                        font-size: 18px;
+                        border: 5px groove #ddd;
+                        background-image: linear-gradient(to bottom, #8bc34a, #80ca40, #72d235, #5ed929, #40e11d);
+                        padding: 1em;
+                        border-radius: 8px;
+                    }
+                    button:active {
+                        transform: translateY(2px) translateX(-1px);
+                        box-shadow: 1px 1px 12px #40e11d;
+
+                    }
+                }
+
+                .containerConvenioCuotas{
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin: 2em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1em;
+                    background-color: #ddd;
+                    padding: 1em;
+                    border-radius: 8px;
+
+                }
+                
+                .containerDescripcion {
+                    color: #ddd;
+                    padding: 1em 4em;
+                    font-size: small;
+                }
+
+                .containerInfoExtra{
+                    padding: 0 2em;
+                    details{
+                        margin: 10px 0;
+                        padding: 1em;
+                        background-color: #ddd;
+                        border-radius: 8px;
+
+                        summary{
+                            font-weight: bold;
+                        }
+
+                        p {
+                            padding: 0.5em;
+                        }
+                    }
+                }
+
+            }
+
+            .containerRelacionados{
+                grid-area: relacionados;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 20px 5em;
+                align-items: stretch;
+
+
+                .productoCard {
+                    background-color: #222;
+                    width: 320px;
+                    height: auto;
+                    text-align: center;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    box-shadow: 10px 10px 12px #000;
+                    margin: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    overflow: hidden;
+                    justify-content: space-between;
+    
+                    img {
+                        width: 100%;
+                        height: 25em;                            object-fit: cover;
+                    }
+    
+                    .contenedor_descripcion {
+                        padding: 1em;
+    
+                        h2 {
+                            color: #ddd;
+                            font-size: 1.3em;
+                        }
+                        .descripcion {
+                            color: #ddd;
+                            font-size: 0.6em;
+                            margin: 10px 0;
+                        }
+                    }
+                    .contenedorPrecioBotones{
+                            
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.7em;
+                        position: relative;
+                        bottom: 0;
+                        align-items: center;
+
+                        .precio {
+                            font-size: 1.4em;
+                            color: #ddd;
+                            font-weight: bold;
+                                
+                        }
+    
+                        button {
+                            
+                            width: 50%;
+                            border-radius: 7px;
+                            padding: 0.5em;
+                            color: #000;
+                            border: 1px solid #ddd;
+                            background-color: #80ca40;
+                            font-family:"Itim", cursive;
+                            cursor: pointer;
+                        }
+    
+                        button:hover {
+                            transition: 150ms;
+                            background-color: #ddd;
+                            box-shadow: 0 0 12px #5ed929;
+                            border-color: #80ca40;
+                        }
+                        button:active {
+                            transform: translateY(2px) translateX(-1px);
+    
+                        }
+                    }
+                }
+            }
+            }
+        
+
+    }
+
+    footer {
+        background-color: #222;
+        
+        position: relative;
+        height: max-content;
+        
+        bottom: 0;
+
+        .navegacion_secundaria {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10%;
+            align-items: baseline;
+            
+            .redes {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                .contenedorRedes {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+
+                    p {
+                        color: #eee;
+                        font-size: 1em;
+                        font-weight: 100;
+                    }
+                    .list_redes_sociales {
+                        padding: 0;
+                        display: flex;
+                        list-style: none;
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: white;
+                                margin: 10px 10px;
+                            }
+                        }
+                    }
+                }
+                
+    
+
+    
+            }
+    
+                
+            
+            .informacion {
+                .contenedorInformacion {
+                    padding: 10px;
+
+                    p {
+                        color: #eee;
+                        font-size: 1.3em;
+                        font-weight: bold;
+                    }
+                    .list_informacion_adicional {
+                        list-style: none;
+                        padding: 10px;
+                        display: block;
+                        gap:20px;
+                        li {
+                            margin-bottom: 0.5em;
+                            a {
+                                text-decoration: none;
+                                color: white;
+                                margin: 10px 10px ;
+                                
+                            }
+                        }
+                         
+                    }
+                }               
+            }
+
+            .formas_de_pago {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                justify-content: space-around;
+                margin: 0.8em;
+
+                .contenedorFormasDePago {
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8em;
+                    
+                    p {
+                        color: #eee;
+                    }
+                    .list_tarjetas {
+                        list-style: none;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                    }
+                }
+            }
+    
+        }
+
+        .logo_footer {
+            
+
+            .container_logoFoot{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                padding: 10px 0;
+                bottom: 0;
+                
+                img {
+                    width: 7em;
+                }
+                p {
+                    font-family: "Itim", cursive;
+                    color: #eee;
+                    font-size: 12px;
+                }
+            }
+
+            .container_icono_WP {
+                a {
+                    svg {
+                        position: fixed;
+                        bottom: 5vh;
+                        right: 3vw;
+                    }
+
+                    svg:hover{
+                        transform: scale(130%);
+                        transition: 150ms;
+                    }
+                }
+                
+                
+            }
+        }
+
+    }
+
+}   
+
+@media screen and (max-width:600px) {
+    body {
+        header {
+            .informacionCabecera {
+                .list_info_cabecera {
+                    font-size: 10px;
+                    margin-right: 2em;
+                    gap: 2em;
+                    padding: 10px;
+                }
+            }
+            .navegacion_principal {
+                .logo{
+                    width: 20%;
+                    padding: 5px;
+                }
+
+                .list_enlaces {
+                    margin: 5px 0;
+                    padding:0 5px;
+                    li {
+                        border: none;
+                    }
+                }
+            }
+            
+
+        }
+
+        main {
+            .cards {
+                .indexTitle {
+                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem)
+                }
+
+                .container_productos {
+                    padding: 0;
+
+                    .productoCard {
+                        width: 15rem;
+
+                        img {
+                            height: 20em;
+                        }
+                        .cuerpo-tarjeta {
+                            .titulo-card {
+                                font-size: 1.2em;
+                            }
+                            .card-descripcion{
+                                font-size: 0.7em;
+                            }
+                            .price{
+                                font-size: 1.2em;
+                            }
+    
+                        }
+                        
+                    }
+                    
+
+             
+                }
+            }
+        }
+
+
+        footer {
+            margin-top: 10px;
+            .navegacion_secundaria {
+                justify-content: flex-start;
+                padding: 10px;
+                .informacion{
+                    .contenedorInformacion{
+                        p {
+                            font-size: clamp(0.625rem, 0.196rem + 2.14vw, 1rem);
+                        }
+                        .list_informacion_adicional li a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .formas_de_pago .contenedorFormasDePago{
+                    font-size: 14px;
+                    text-align: center;
+                    .list_tarjetas{
+                        gap: 10px;
+                        padding: 0;
+                    }
+
+                }
+
+                .redes .contenedorRedes {
+                    font-size: 16px;
+                    gap: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ((min-width:600px) and (max-width:768px)) {
+    body {
+        header {
+            .informacionCabecera {
+                .list_info_cabecera {
+                    font-size: 12px;
+                    margin-right: 2em;
+                    gap: 2em;
+                    padding: 10px;
+                }
+            }
+            .navegacion_principal {
+                .logo{
+                    width: 20%;
+                    padding: 5px;
+                }
+
+                .list_enlaces {
+                    margin: 5px 0;
+                    padding:0 5px;
+                    li {
+                        border: none;
+                    }
+                }
+            }
+            
+
+        }
+
+        main {
+            .cards {
+                .indexTitle {
+                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem)
+                }
+
+                .container_productos {
+                    padding: 0;
+
+                    .productoCard {
+                        width: 18rem;
+
+                        img {
+                            height: 20em;
+                        }
+                        .cuerpo-tarjeta {
+                            .titulo-card {
+                                font-size: 1.3em;
+                            }
+                            .card-descripcion{
+                                font-size: 0.8em;
+                            }
+                            .price{
+                                font-size: 1.3em;
+                            }
+    
+                        }
+                    }
+                    
+
+             
+                }
+            }
+        }
+
+
+        footer {
+            margin-top: 10px;
+            .navegacion_secundaria {
+                justify-content: flex-start;
+                padding: 10px;
+                .informacion{
+                    .contenedorInformacion{
+                        p {
+                            font-size: clamp(0.625rem, 0.196rem + 2.14vw, 1rem);
+                        }
+                        .list_informacion_adicional li a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .formas_de_pago .contenedorFormasDePago{
+                    font-size: 14px;
+                    text-align: center;
+                    .list_tarjetas{
+                        gap: 10px;
+                        padding: 0;
+                    }
+
+                }
+
+                .redes .contenedorRedes {
+                    font-size: 16px;
+                    gap: 2px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and ((min-width:768px) and (max-width:992px)) {
+    body {
+        header {
+            .informacionCabecera {
+                .list_info_cabecera {
+                    font-size: 14px;
+                    margin-right: 2em;
+                    gap: 2em;
+                    padding: 7px;
+                }
+            }
+            .navegacion_principal {
+                .logo{
+                    width: 15%;
+                    padding: 5px;
+                }
+
+                .list_enlaces {
+                    margin: 5px 0;
+                    padding:0 5px;
+                    li {
+                        border: none;
+                    }
+                }
+            }
+            
+
+        }
+
+
+
+
+        main {
+            .cards {
+                .indexTitle {
+                    font-size: clamp(2rem, -0.143rem + 4.46vw, 2.625rem)
+                }
+
+                .container_productos {
+                    padding: 0;
+
+                    .productoCard {
+                        width: 19rem;
+
+                        img {
+                            height: 20em;
+                        }
+                        .cuerpo-tarjeta {
+                            .titulo-card {
+                                font-size: 1.5em;
+                            }
+                            .card-descripcion{
+                                font-size: 0.9em;
+                            }
+                            .prece{
+                                font-size: 1.4em;
+                            }
+    
+                        }
+                    }
+                    
+
+             
+                }
+            }
+        }
+
+
+        footer {
+            margin-top: 10px;
+            .navegacion_secundaria {
+                justify-content: flex-start;
+                padding: 10px;
+                .informacion{
+                    .contenedorInformacion{
+                        p {
+                            font-size: clamp(0.625rem, 0.196rem + 2.14vw, 1rem);
+                        }
+                        .list_informacion_adicional li a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .formas_de_pago .contenedorFormasDePago{
+                    font-size: 14px;
+                    text-align: center;
+                    .list_tarjetas{
+                        gap: 10px;
+                        padding: 0;
+                    }
+
+                }
+
+                .redes .contenedorRedes {
+                    font-size: 16px;
+                    gap: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ((min-width:992px) and (max-width:1300px)) {
+    body {
+        header {
+            .informacionCabecera {
+                .list_info_cabecera {
+                    font-size: 14px;
+                    margin-right: 2em;
+                    gap: 2em;
+                    padding: 7px;
+                }
+            }
+            .navegacion_principal {
+                .logo{
+                    width: 12%;
+                    padding: 5px;
+                }
+
+                .list_enlaces {
+                    margin: 5px 0;
+                    padding:0 5px;
+                    background-color: transparent;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        border: none;
+                        padding: 0;
+                        margin: 0;
+                        a{
+                            font-size: small;
+                            color: #222;
+                        }
+                        
+                    }
+                }
+
+                form 
+                    .btn-lupa {
+                        width: max-content;
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                    }
+                    .btn-carrito-perfil {
+                        width: max-content;
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                
+                    
+            }
+            
+
+        }
+
+
+
+
+        main {
+            .cards {
+                .indexTitle {
+                    font-size: clamp(2rem, -3.962rem + 9.62vw, 3.25rem)
+                }
+
+                .container_productos {
+                    padding: 0;
+
+                    .productoCard {
+                        width: 20rem;
+
+                        img {
+                            height: 25em;
+                        }
+                        .cuerpo-tarjeta {
+                            .titulo-card {
+                                font-size: 1.5em;
+                            }
+                            .card-descripcion{
+                                font-size: 1em;
+                            }
+                            .prece{
+                                font-size: 1.5em;
+                            }
+    
+                        }
+                    }
+                    
+
+             
+                }
+            }
+        }
+
+
+        footer {
+            margin-top: 20px;
+            .navegacion_secundaria {
+                justify-content: flex-start;
+                padding: 10px;
+                .informacion{
+                    .contenedorInformacion{
+                        p {
+                            font-size: clamp(0.625rem, 0.196rem + 2.14vw, 1rem);
+                        }
+                        .list_informacion_adicional li a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .formas_de_pago .contenedorFormasDePago{
+                    font-size: 14px;
+                    text-align: center;
+                    .list_tarjetas{
+                        gap: 10px;
+                        padding: 0;
+                    }
+
+                }
+
+                .redes .contenedorRedes {
+                    font-size: 16px;
+                    gap: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ((min-width:1300px) and (max-width:1600px)) {
+    body {
+        header {
+            .informacionCabecera {
+                .list_info_cabecera {
+                    font-size: 16px;
+                    margin-right: 2em;
+                    gap: 2em;
+                    padding: 7px;
+                }
+            }
+            .navegacion_principal {
+                .logo{
+                    width: 10%;
+                    padding: 5px;
+                }
+
+                .list_enlaces {
+                    margin: 5px 0;
+                    padding:0 5px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    background-color: #222;
+
+                    li {
+                        border-right: 1px solid #fff;
+                        padding: 5px;
+                        margin: 2px;
+                        a{
+                            font-size: small;
+                            color: #eee;
+                        }
+                        
+                    }
+                }
+
+                form 
+                    .btn-lupa {
+                        width: max-content;
+                        svg {
+                            width: 25px;
+                            height: 25px;
+                        }
+
+                    }
+                    .btn-carrito-perfil {
+                        width: max-content;
+                        svg {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                
+                    
+            }
+            
+
+        }
+
+
+
+
+        main {
+            .cards {
+                .indexTitle {
+                    font-size: clamp(2rem, -3.962rem + 9.62vw, 3.25rem)
+                }
+
+                .container_productos {
+                    padding: 0;
+
+                    .productoCard {
+                        width: 20em;
+
+                        img {
+                            height: 25em;
+                        }
+                        .cuerpo-tarjeta {
+                            .titulo-card {
+                                font-size: 1.5em;
+                            }
+                            .card-descripcion{
+                                font-size: 1em;
+                            }
+                            .prece{
+                                font-size: 1.5em;
+                            }
+    
+                        }
+                    }
+                    
+
+             
+                }
+            }
+        }
+
+
+        footer {
+            margin-top: 20px;
+            .navegacion_secundaria {
+                justify-content: space-around;
+                padding: 10px;
+                .informacion{
+                    .contenedorInformacion{
+                        p {
+                            font-size: clamp(0.625rem, 0.196rem + 2.14vw, 1rem);
+                        }
+                        .list_informacion_adicional li a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .formas_de_pago .contenedorFormasDePago{
+                    font-size: 14px;
+                    text-align: center;
+                    .list_tarjetas{
+                        gap: 10px;
+                        padding: 0;
+                    }
+
+                }
+
+                .redes .contenedorRedes {
+                    
+                    
+                    font-size: 16px;
+                    gap: 2px;
+
+                    .list_redes_sociales{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
