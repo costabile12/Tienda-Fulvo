@@ -850,20 +850,28 @@ body {
                     padding: 0;
 
                     .productoCard {
-                        width: 15rem;
+                        width: 11rem;
 
                         img {
-                            height: 20em;
+                            height: 15em;
                         }
                         .cuerpo-tarjeta {
                             .titulo-card {
-                                font-size: 1.2em;
+                                font-size: 14px;
                             }
                             .card-descripcion{
-                                font-size: 0.7em;
+                                font-size: 10px;
                             }
                             .price{
-                                font-size: 1.2em;
+                                font-size: 14px;
+                            }
+                            .btn-descripcion{
+                                
+                                font-size: 10px;
+                            }
+                            .btn-comprar{
+                                font-size: 10px;
+                                width: 95px;
                             }
     
                         }
@@ -894,7 +902,7 @@ body {
                 }
 
                 .formas_de_pago .contenedorFormasDePago{
-                    font-size: 14px;
+                    font-size: 15px;
                     text-align: center;
                     .list_tarjetas{
                         gap: 10px;
@@ -904,7 +912,7 @@ body {
                 }
 
                 .redes .contenedorRedes {
-                    font-size: 16px;
+                    font-size: 15px;
                     gap: 2px;
                 }
             }
