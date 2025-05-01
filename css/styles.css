@@ -1218,11 +1218,16 @@ body {
         main {
             .cards {
                 .indexTitle {
-                    font-size: clamp(2rem, -3.962rem + 9.62vw, 3.25rem)
+                    font-size: clamp(2rem, -3.962rem + 9.62vw, 3.25rem);
+                    background-color: #222;
+                    padding: 5px;
+                    text-shadow: none;
                 }
 
                 .container_productos {
                     padding: 0;
+                    display: flex;
+                    justify-content: center;
 
                     .productoCard {
                         width: 20rem;
