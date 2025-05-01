@@ -854,7 +854,7 @@ body {
                 .container_productos {
                     padding: 0;
                     display: flex;
-                    justify-content: space-evenly;
+                    justify-content: center;
 
                     .productoCard {
                         width: 10rem;
@@ -968,6 +968,8 @@ body {
 
                 .container_productos {
                     padding: 0;
+                    display: flex;
+                    justify-content: center;
                     
 
                     .productoCard {
@@ -1076,11 +1078,17 @@ body {
         main {
             .cards {
                 .indexTitle {
-                    font-size: clamp(2rem, -0.143rem + 4.46vw, 2.625rem)
+                    font-size: clamp(2rem, -0.143rem + 4.46vw, 2.625rem);
+                    background-color: #222;
+                    border-radius: 0 70px 0 70px;
+                    padding: 8px;
+                    text-shadow: none;
                 }
 
                 .container_productos {
                     padding: 0;
+                    display: flex;
+                    justify-content: center;
 
                     .productoCard {
                         width: 19rem;
