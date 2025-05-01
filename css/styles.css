@@ -853,6 +853,8 @@ body {
 
                 .container_productos {
                     padding: 0;
+                    display: flex;
+                    justify-content: space-evenly;
 
                     .productoCard {
                         width: 10rem;
@@ -966,6 +968,7 @@ body {
 
                 .container_productos {
                     padding: 0;
+                    
 
                     .productoCard {
                         width: 18rem;
