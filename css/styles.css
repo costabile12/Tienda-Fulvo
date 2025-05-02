@@ -134,6 +134,28 @@ body {
             }
         }
 
+        .marquee {
+            background-color: #222;
+
+            .marcasPrincipales {
+                font-weight: bold;
+                color: #ddd;
+
+                .list_marcas {
+                    
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 25em;
+                    margin: 0;
+                    margin-top: 5px;
+                    padding: 2px;
+                }
+            }
+    
+        } 
+
+        
 
     }
 
@@ -837,17 +859,32 @@ body {
                 }
             }
             
+            .marquee {
+                .marcasPrincipales {
+                    .list_marcas {
+                        gap: 20em;
+                        font-size: 10px;
+                        margin-top: 5px;
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+            
 
         }
 
         main {
-            .cards {
-                .indexTitle {
+            .cards, .argentinos, .europeos, .retro, .restoMundo {
+                .indexTitle , h1 {
                     font-size: clamp(1rem, -0.857rem + 9.29vw, 2.625rem);
                     background-color: #222;
                     border-radius: 0 40px 0 40px;
                     padding: 5px;
                     text-shadow: none;
+                    text-align: center;
                     
                 }
 
@@ -889,6 +926,93 @@ body {
              
                 }
             }
+
+            .contacto {
+                padding: 0;
+                h1 {
+                    font-size: clamp(1rem, -0.857rem + 9.29vw, 2.625rem);
+                    background-color: #222;
+                    border-radius: 0 40px 0 40px;
+                    padding: 5px;
+                    text-shadow: none;
+                    text-align: center;
+                }
+                .containerContacto {
+                    width: 100vw;
+                    padding: 0;
+                    margin: 0;
+
+                    form {
+                        width: 90%;
+                        fieldset{
+                            padding: 0;
+
+                            legend{
+                                font-size: 12px;
+                            }
+                            p {
+                                label {
+                                    font-size: 12px;
+                                }
+                                input {
+                                    width: 100%;
+                                    padding: 2px;
+                                }
+                                textarea{
+                                    height: 100px;
+                                    width: 100%;
+                                }
+                            }
+                            .container_botones {
+                                .boton {
+                                    font-size: 12px;
+                                    width: 50%;
+                                    margin-top: 10px;
+                                }
+                            }
+                           
+                        }
+                    }
+
+                    .otrasFormasContacto {
+                        gap: 5px;
+                        .atencionPublico {
+                            h2  {
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+                            p {
+                                font-size: 16px;
+                            }
+
+                        }
+                        .horarios {
+                            h2 {
+                                font-size: 12px;
+                                font-weight: bold;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+    
+                        }
+                    }
+
+                }
+            }
+
+            .ubicacion {
+                padding: 10px;
+                h1 {
+                    font-size: clamp(1rem, -0.857rem + 9.29vw, 2.625rem);
+                    background-color: #222;
+                    border-radius: 0 40px 0 40px;
+                    padding: 5px;
+                    text-shadow: none;
+                    text-align: center;
+                }
+            }
+            
         }
 
 
