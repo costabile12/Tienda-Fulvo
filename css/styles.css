@@ -163,17 +163,42 @@ body {
 
     main {
         
-
-        .presentacion {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            
-            img {
+        .presentacion{
+            .containerCarrusel {
                 width: 100%;
-                margin:0;    
+                height: auto;/* 65% del alto de la pantalla */
+                overflow: hidden;
+
+                .containerInner {
+                    width: 100%;
+                    height: 100%;
+
+                    .containerImg{
+                        width: 100%;
+                        height: 100%;
+
+                        .img_1, .img_2 {
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+                            object-position: center;
+                        }
+                        
+                        .img_3{
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+                            object-position: center bottom;
+                        }
+                    }
+                }
             }
+                
         }
+
+
+
+       
         
         .cards, .retro, .restoMundo, .europeos, .argentinos {
             
