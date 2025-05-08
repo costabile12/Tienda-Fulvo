@@ -253,16 +253,17 @@ body {
                             color: #ddd;
                             font-family: Arial, Helvetica, sans-serif;
                             font-weight: bold;
-                            font-size: 28px;
+                            font-size: 1.6em;
                         }
 
                         .card-descripcion{
                             color: #ddd;
+                            font-size: 0.6em;
 
                         }
                         .price {
                             color: #ddd;
-                            font-size: 22px;
+                            font-size: 1.6em;
                             font-weight: bold;
                         }
 
@@ -445,9 +446,10 @@ body {
 
             h1 {
                 color: white;
-                text-shadow: 0 0 12px black;
+                text-shadow: 3px 3px 2px black;
                 margin: 1em 3em;
                 font-size: 32px;
+                font-family: "Itim";
             }
 
             .containerMaps {
@@ -520,6 +522,8 @@ body {
                     }
 
                     .quantity-selector {
+                        display: flex;
+                        gap: 5px;
                         input {
                             padding: 6px;
                             border-radius: 8px;
@@ -634,6 +638,7 @@ body {
                     height: auto;
                     text-align: center;
                     overflow: hidden;
+                    border: none;
                     border-radius: 10px;
                     box-shadow: 10px 10px 12px #000;
                     margin: 10px;
@@ -647,37 +652,31 @@ body {
                         height: 25em;                            object-fit: cover;
                     }
     
-                    .contenedor_descripcion {
+                    .cuerpo-tarjeta {
                         padding: 1em;
     
-                        h2 {
+                        .titulo-card {
+                            font-family: Arial, Helvetica, sans-serif;
                             color: #ddd;
-                            font-size: 1.3em;
-                        }
-                        .descripcion {
-                            color: #ddd;
-                            font-size: 0.6em;
-                            margin: 10px 0;
-                        }
-                    }
-                    .contenedorPrecioBotones{
-                            
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.7em;
-                        position: relative;
-                        bottom: 0;
-                        align-items: center;
-
-                        .precio {
-                            font-size: 1.4em;
-                            color: #ddd;
+                            font-size: 1.5em;
                             font-weight: bold;
-                                
                         }
-    
-                        button {
+                        .card-descripcion {
+                            color: #ddd;
+                            font-size: 0.8em;
+                            margin: 10px 0;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                        .price{
+                            color: #ddd;
+                            font-size: 1.5em;
+                            font-weight: bold;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+
+                        .btn-descripcion, .btn-comprar  {
                             
+                            margin: 7px 0;
                             width: 50%;
                             border-radius: 7px;
                             padding: 0.5em;
@@ -687,24 +686,42 @@ body {
                             font-family:"Itim", cursive;
                             cursor: pointer;
                         }
-    
-                        button:hover {
+
+                        .btn-descripcion:hover {
                             transition: 150ms;
                             background-color: #ddd;
                             box-shadow: 0 0 12px #5ed929;
                             border-color: #80ca40;
                         }
-                        button:active {
+
+                        .btn-descripcion:active {
                             transform: translateY(2px) translateX(-1px);
     
                         }
+
+                        .btn-comprar:hover{
+                            transition: 150ms;
+                            background-color: #ddd;
+                            box-shadow: 0 0 12px #5ed929;
+                            border-color: #80ca40;
+                        }
+                        }
+                        .btn-comprar:active{
+                            transform: translateY(2px) translateX(-1px);
+                        }
+    
+                    }
+        
+    
+
+
                     }
                 }
             }
-            }
+            
         
 
-    }
+    
 
     footer {
         background-color: #222;
@@ -1108,7 +1125,7 @@ body {
         main {
             .cards {
                 .indexTitle {
-                    font-size: clamp(1rem, -0.143rem + 5.71vw, 2rem);
+                    font-size: 32px;
                     background-color: #222;
                     border-radius: 0 40px 0 40px;
                     padding: 5px;
