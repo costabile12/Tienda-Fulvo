@@ -717,7 +717,128 @@ body {
 
                     }
                 }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .carrito {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background-color: #f2f2f2;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;  
+            transition: right 0.3s ease;
+            z-index: 999;
+            overflow-y: auto;
+
+            #btnCerrarCarrito {
+                color: white;
+                position: relative;
+                left: 290px;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background-color: #80ca40;
+                border-color: white;
+
             }
+
+            h2 {
+                font-weight: bold;
+                font-family: "Itim", cursive;
+                
+            }
+            .mensajeVacio {
+                margin-left: 20px;
+                color: crimson;
+            }
+
+            #listCarrito {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px 0;
+                    border-bottom: 1px solid #bbb;
+
+                    img {
+                        width: 60px;
+                        height: 80px;
+                    }
+
+                    h3 {
+                        font-family: "Itim", cursive;
+                        font-size: 15px;
+                    }
+                    
+                    h4 {
+                        font-family: "Itim", cursive;
+                        font-size: 14px;
+                        
+                    }
+
+                    .controlador-cantidad {
+                        display: flex;
+                        gap: 7px;
+                        align-items: center;
+
+                        .btn-reducir, .btn-aumentar {
+                            width: 25px;
+                            height: 25px;
+                            text-align: center;
+                            border-radius: 8px;
+                            background-color: #80ca40;
+                            color: #fff;
+                            border-color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                li:last-child {
+                    border: none;
+                }
+
+                
+               
+            }
+
+            .total {
+                    text-align: right;
+                    font-family: Arial, Helvetica, sans-serif;  
+                    font-size: 22px;
+
+            }
+        }
+
+        .carrito.open {
+            right: 0;
+        }
+
+        
+    }
             
         
 
