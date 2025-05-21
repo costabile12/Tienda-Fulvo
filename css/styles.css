@@ -119,6 +119,10 @@ body {
                     background-color: #222;
                 }
 
+                .btn-carrito .cantidad {
+                    color: white;
+                }
+
                 .btn-carrito:active{
                     background-color: #222;
                     border-color: #ddd;
@@ -249,11 +253,18 @@ body {
                         object-fit: cover;
                     }
                     .cuerpo-tarjeta {
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        
                         .titulo-card{
                             color: #ddd;
                             font-family: Arial, Helvetica, sans-serif;
                             font-weight: bold;
                             font-size: 1.6em;
+                            
                         }
 
                         .card-descripcion{
