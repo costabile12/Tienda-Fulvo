@@ -1,21 +1,30 @@
-//Funcion para cargar cards
 cargarTarjetas = (product) => {
     let cardDiv = document.createElement("div");
-    cardDiv.classList.add("card");
-    cardDiv.classList.add("productoCard");
-    cardDiv.innerHTML = `
-                        <img src="${product.thumbnail}" class="card-img-top" alt="${product.title}">
-                        <div class="card-body cuerpo-tarjeta">
-                        <h5 class="card-title titulo-card">${product.title}</h5>
-                        <p class="card-text card-descripcion">${product.description}</p>
-                        <p class="price">$${product.price}</p>
-                        <button class="btn btn-secondary btn-descripcion" onclick="abrirDescripcion(${product.id}, '${product.title}', ${product.price}, '${product.description}', '${product.thumbnail}')">Abrir Descripción</button>
-                        <br>
-                        <a href="#" class="btn btn-primary btn-comprar" onclick="agregarAlCarrito('${product.title}',${product.price}, ${product.id}, '${product.thumbnail}')">Comprar</a>
-                        </div>`;
-    return cardDiv
-}
+    cardDiv.classList.add("card", "productoCard");
 
+    cardDiv.innerHTML = `
+        <img src="${product.thumbnail}" class="card-img-top" alt="${product.title}">
+        <div class="card-body cuerpo-tarjeta">
+            <h5 class="card-title titulo-card">${product.title}</h5>
+            <p class="card-text card-descripcion">${product.description}</p>
+            <p class="price">$${product.price}</p>
+            <button class="btn btn-primary btn-comprar">Comprar</button>
+        </div>`;
+
+    // ➕ Agregamos el event listener al botón después de insertarlo
+    const btnComprar = cardDiv.querySelector(".btn-comprar");
+    btnComprar.addEventListener("click", () => {
+        abrirDescripcion(
+            product.id,
+            product.title,
+            product.price,
+            product.description,
+            product.thumbnail
+        );
+    });
+
+    return cardDiv;
+}
 
 //Cargar cards de forma dinamica 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,7 +82,9 @@ let total = 0;
 //Funcion para mostrar mensaje cuando el carrito esta vacio
 mensajeVacioCarrito = () => {
     const mensajeVacio = document.querySelector("#mensajeVacio");
-    mensajeVacio.style.display = (carrito.length === 0) ? "block":"none"
+    const total = document.querySelector(".total");
+    mensajeVacio.style.display = (carrito.length === 0) ? "block":"none";
+    total.style.display = (carrito.length === 0) ? "none":"block";
 }
 
 //Funcion para guardar en localStorage el carrito y el precio total
@@ -129,6 +140,7 @@ agregarAlCarrito = (nombre, precio, id, imagen) => {
         let precioTotal = document.querySelector("#precioTotal");
         precioTotal.innerText = total.toFixed(2);
 
+        alert(`${nombre} se agrego al carrito`)
 
 
         actualizarContadorGlobal();
@@ -184,6 +196,7 @@ reducirCantidad = (id) => {
         mensajeVacioCarrito();
 }
 
+//Funcion para actualizar el contador del carrito 
 actualizarContadorGlobal = () => {
     let cantidadTotal = carrito.reduce((sum, p) => sum + p.cantidad, 0);
     let contadorProductos = document.querySelector("#cantidad");
@@ -197,9 +210,142 @@ actualizarContadorGlobal = () => {
     }
 }
 
+//Funcion para el boton de agregar al carrito
+vaciarCarrito = () => {
+    carrito = [];
+    total = 0;
+    document.querySelector("#listCarrito").innerHTML ="";
+    document.querySelector("#precioTotal").innerText = "0.00";
+    actualizarContadorGlobal();
+    guardarCarritoEnLocalStorage();
+    mensajeVacioCarrito();
+    alert("El carrito de compras se ha vaciado")
+    
+}
+
+//Cargar el carrito desde el local storage
+restaurarCarrito = () => {
+    const carritoGuardado = JSON.parse(localStorage.getItem("carrito"));
+    const totalGuardado = parseFloat(localStorage.getItem("total"));
+
+    if (carritoGuardado && Array.isArray(carritoGuardado)) {
+        carrito = carritoGuardado;
+        total = isNaN(totalGuardado) ? 0 : totalGuardado;
+
+        const listaCarrito = document.querySelector("#listCarrito");
+        listaCarrito.innerHTML = "";
+
+        carrito.forEach(p => {
+            let productItem = document.createElement("li");
+            productItem.setAttribute("data-id", p.id);
+            productItem.innerHTML = `
+                <img src="${p.imagen}" alt="${p.nombre}">
+                <h3>${p.nombre}</h3>
+                <h4>$${p.precio}</h4>
+                <div class="controlador-cantidad">
+                    <button class="btn-reducir">-</button>
+                    <span class="cantidad">${p.cantidad}</span>
+                    <button class="btn-aumentar">+</button>
+                </div>
+            `;
+
+            // ✅ Agregamos los event listeners después de agregar el HTML
+            const btnReducir = productItem.querySelector(".btn-reducir");
+            const btnAumentar = productItem.querySelector(".btn-aumentar");
+
+            btnReducir.addEventListener("click", () => reducirCantidad(p.id));
+            btnAumentar.addEventListener("click", () => aumentarCantidad(p.id));
+
+            listaCarrito.appendChild(productItem);
+        });
+
+        document.querySelector("#precioTotal").innerText = total.toFixed(2);
+        actualizarContadorGlobal();
+        mensajeVacioCarrito();
+    }
+}
+
+
+let productoSeleccionado = null; //Variable global donde se guarda temporalmente el producto actual al hacer clic en "Abrir descripción"
+
+//Funcion para abrir un modal con la descripcion del producto
+abrirDescripcion = (id, titulo, precio, descripcion, imagen) => {
+    
+    //Guarda los datos del producto actual para usarlos más tarde (cuando se agregue al carrito).
+    productoSeleccionado = { id, titulo, precio, descripcion, imagen };
+
+
+    //Inserta la información del producto en el modal.
+    document.getElementById("modalImagen").src = imagen;
+    document.getElementById("modalTitulo").innerText = titulo;
+    document.getElementById("modalDescripcionTexto").innerText = descripcion;
+    document.getElementById("modalPrecio").innerText = precio;
+
+    //Restablece los valores de cantidad y talle a sus valores por defecto cada vez que abrís el modal.
+    document.getElementById("cantidadProducto").value = 1;
+    // document.getElementById("talleProducto").value = "M";
+
+    document.getElementById("modalDescripcion").style.display = "block";
+}
+
+cerrarModal = () => {
+    document.getElementById("modalDescripcion").style.display = "none";
+}
+
+confirmarAgregarAlCarrito = () => {
+    const cantidad = parseInt(document.getElementById("cantidadProducto").value);
+    const idProducto = productoSeleccionado.id;
+    const nombreProducto = productoSeleccionado.titulo;
+
+    for (let i = 0; i < cantidad; i++) {
+        agregarAlCarrito(nombreProducto, productoSeleccionado.precio, idProducto, productoSeleccionado.imagen);
+    }
+
+    cerrarModal();
+}
+
+
+const btnComprar = document.querySelector("#btnComprar");
+const formularioDeCompras = document.querySelector("#formulario-compra");
+
+
+btnComprar.addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0){
+        alert("El carrito esta vacio");
+        return;
+    }
+
+    //Mostrar formularo de compra
+    formularioDeCompras.classList.remove("oculto");
+
+    
+});
+
+document.getElementById("confirmar-compra").addEventListener("click", () => {
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const direccion = document.getElementById("direccion").value.trim();
+
+    if (!nombre || !email || !direccion) {
+        alert("Por favor completá todos los campos.");
+        return;
+    }
+
+    alert("¡Gracias por tu compra, " + nombre + "!");
+
+    vaciarCarrito(); // Vaciamos todo y actualizamos
+
+    formularioDeCompras.classList.add("oculto"); // Ocultamos el formulario
+});
+
+document.getElementById("btnCerrarFormulario").addEventListener("click", () => {
+    formularioDeCompras.classList.add("oculto");
+});
 
 
 
+window.addEventListener("DOMContentLoaded", restaurarCarrito);
 
 
 
@@ -228,3 +374,4 @@ overlay.addEventListener("click",() =>{
     overlay.classList.remove("active")
     
 });
+

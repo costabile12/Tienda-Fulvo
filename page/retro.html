@@ -115,6 +115,33 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Modal Descripción -->
+        <div id="modalDescripcion" class="modal">
+          <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="modalImagen" src="" alt="" />
+            <h2 id="modalTitulo"></h2>
+            <p id="modalDescripcionTexto"></p>
+            <p><strong>Precio:</strong> $<span id="modalPrecio"></span></p>
+
+            <label for="cantidadProducto">Cantidad:</label>
+            <input type="number" id="cantidadProducto" value="1" min="1" />
+
+            <!-- <label for="talleProducto">Talle:</label>
+            <select id="talleProducto">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select> -->
+
+            <button onclick="confirmarAgregarAlCarrito()">Agregar al carrito</button>
+          </div>
+      </div>
+
+
                 <!--Carrito de compras-->
         <div class="overlay" id="overlay"></div>
         <section class="carrito">
@@ -151,11 +178,24 @@
                 <span class="cantidad">1</span>
                 <button class="btn-aumentar" onclick="aumentarCantidad()">+</button>
               </div> 
-            </li>
-             -->
+            </li> -->
+            
           </ul>
           <p class="total">Total: $<span id="precioTotal"></span></p>
+          <button class="btnVaciarCarrito" id="btnVaciarCarrito" onclick="vaciarCarrito()">Vaciar carrito</button>
+          <button class="btnComprar" id="btnComprar">Comprar</button>
         </section>
+
+          <form action="" method="POST" id="formulario-compra" class="formulario-compra modal oculto">
+            <button class="btnCerrarFormulario" id="btnCerrarFormulario">x</button>
+            <h3>Datos para la compra</h3>
+            <input type="text" id="nombre" placeholder="Nombre completo" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="text" id="direccion" placeholder="Dirección de envío" required />
+            <button id="confirmar-compra" type="submit">Confirmar compra</button>
+            <input type="reset" value="Borrar datos" class="borrarDatos">
+        </form>
+
         
     </main>
     <footer>

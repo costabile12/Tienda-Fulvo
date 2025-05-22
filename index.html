@@ -49,8 +49,8 @@
                   <button class="btn btn-outline-success btn-lupa" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><path fill="#ddd" d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208M208 352a144 144 0 1 0 0-288a144 144 0 1 0 0 288"/></svg></button>
                 </form>
                 <div class="btn-carrito-perfil">
-                    <button class="btn btn-outline-success btn-perfil " type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#ddd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></button>
-                    <button class="btn btn-outline-success btn-carrito " id="btnCarrito" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#ddd" d="M7 22q-.825 0-1.412-.587T5 20t.588-1.412T7 18t1.413.588T9 20t-.587 1.413T7 22m10 0q-.825 0-1.412-.587T15 20t.588-1.412T17 18t1.413.588T19 20t-.587 1.413T17 22M6.15 6l2.4 5h7l2.75-5zM5.2 4h14.75q.575 0 .875.513t.025 1.037l-3.55 6.4q-.275.5-.737.775T15.55 13H8.1L7 15h12v2H7q-1.125 0-1.7-.987t-.05-1.963L6.6 11.6L3 4H1V2h3.25zm3.35 7h7z"/></svg><span class="cantidad" id="cantidad"></span></button>
+                    <button class="btn btn-outline-success btn-perfil " ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#ddd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></button>
+                    <button class="btn btn-outline-success btn-carrito " id="btnCarrito" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="#ddd" d="M7 22q-.825 0-1.412-.587T5 20t.588-1.412T7 18t1.413.588T9 20t-.587 1.413T7 22m10 0q-.825 0-1.412-.587T15 20t.588-1.412T17 18t1.413.588T19 20t-.587 1.413T17 22M6.15 6l2.4 5h7l2.75-5zM5.2 4h14.75q.575 0 .875.513t.025 1.037l-3.55 6.4q-.275.5-.737.775T15.55 13H8.1L7 15h12v2H7q-1.125 0-1.7-.987t-.05-1.963L6.6 11.6L3 4H1V2h3.25zm3.35 7h7z"/></svg><span class="cantidad" id="cantidad"></span></button>
                 </div>
                 
               </div>
@@ -141,7 +141,7 @@
                       <p class="price">$20.000</p>
                       <button class="btn btn-secondary btn-descripcion">Abrir Descripción</button>
                       <br>
-                      <a href="#" class="btn btn-primary btn-comprar">Comprar</a>
+                      <a href="#" class="btn btn-primary btn-comprar" >Comprar</a>
                     </div>
                 </div>
 
@@ -201,6 +201,30 @@
 
         </section>
 
+        <!-- Modal Descripción -->
+        <div id="modalDescripcion" class="modal">
+          <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="modalImagen" src="" alt="" />
+            <h2 id="modalTitulo"></h2>
+            <p id="modalDescripcionTexto"></p>
+            <p><strong>Precio:</strong> $<span id="modalPrecio"></span></p>
+
+            <label for="cantidadProducto">Cantidad:</label>
+            <input type="number" id="cantidadProducto" value="1" min="1" />
+
+            <!-- <label for="talleProducto">Talle:</label>
+            <select id="talleProducto">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select> -->
+
+            <button onclick="confirmarAgregarAlCarrito()">Agregar al carrito</button>
+          </div>
+      </div>
+
         <!--Carrito de compras-->
         <div class="overlay" id="overlay"></div>
         <section class="carrito">
@@ -241,7 +265,21 @@
             
           </ul>
           <p class="total">Total: $<span id="precioTotal"></span></p>
+          <button class="btnVaciarCarrito" id="btnVaciarCarrito" onclick="vaciarCarrito()">Vaciar carrito</button>
+          <button class="btnComprar" id="btnComprar">Comprar</button>
         </section>
+
+
+
+        <form action="" method="POST" id="formulario-compra" class="formulario-compra modal oculto">
+            <button class="btnCerrarFormulario" id="btnCerrarFormulario">x</button>
+            <h3>Datos para la compra</h3>
+            <input type="text" id="nombre" placeholder="Nombre completo" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="text" id="direccion" placeholder="Dirección de envío" required />
+            <button id="confirmar-compra" type="submit">Confirmar compra</button>
+            <input type="reset" value="Borrar datos" class="borrarDatos">
+        </form>
 
         
     </main>
