@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let carrito = [];
 let total = 0;
 
+
 //Funcion para mostrar mensaje cuando el carrito esta vacio
 mensajeVacioCarrito = () => {
     const mensajeVacio = document.querySelector("#mensajeVacio");
