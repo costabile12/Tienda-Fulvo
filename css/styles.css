@@ -91,6 +91,7 @@ body {
                 }
                  
             }
+            
             .buscador:focus {
                 outline: none;
                 box-shadow: 0 0 12px #000;
@@ -202,7 +203,7 @@ body {
 
 
 
-       
+
         
         .cards, .retro, .restoMundo, .europeos, .argentinos {
             
@@ -227,7 +228,7 @@ body {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: flex-start;
-                padding: 20px 10em;
+                padding: 1em 0px 10em 7em;
                 align-items: stretch;
 
                 
@@ -1024,7 +1025,7 @@ body {
 
         
     }
-            
+        
         
 
     

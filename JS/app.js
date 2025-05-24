@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(data => {
+
+            todosLosProductos = data.product;
+
             if(productosPopulares) productosPopulares.innerHTML = "";
             if(camisetasEuropeas) camisetasEuropeas.innerHTML = "";
             if(camisetasArgentinas) camisetasArgentinas.innerHTML = "";
@@ -77,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let carrito = [];
 let total = 0;
-
+let todosLosProductos = [];
 
 //Funcion para mostrar mensaje cuando el carrito esta vacio
 mensajeVacioCarrito = () => {
@@ -374,4 +377,6 @@ overlay.addEventListener("click",() =>{
     overlay.classList.remove("active")
     
 });
+
+
 
